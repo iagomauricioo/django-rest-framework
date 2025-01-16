@@ -52,3 +52,15 @@ class Curso(models.Model):
 
     def __str__(self):
         return self.codigo
+    
+"""MATRÍCULA
+Id
+Relacionar com o modelo Estudante
+Se o Estudante for deletado, todas as matrículas daquele estudante devem ser deletadas
+Relacionar com o modelo Curso
+Se o Curso for deletado, todas as matriculas daquele curso devem ser deletadas
+Período (Matutino, Vespertino, Noturno)
+Não pode estar em Branco
+Não pode ser Nulo
+Por padrão deve ser Matutino"""
+class Matricula():
