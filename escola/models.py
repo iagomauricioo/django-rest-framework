@@ -63,4 +63,19 @@ Período (Matutino, Vespertino, Noturno)
 Não pode estar em Branco
 Não pode ser Nulo
 Por padrão deve ser Matutino"""
-class Matricula():
+
+class Matricula(models.Model):
+    PERIODO = (
+        ('M', 'Matutino'),
+        ('V', 'Vespertino'),
+        ('N', 'Noturno')
+    )
+    estudante = models.ForeignKey(Estudante, on_delete = models.CASCADE)
+    curso = models.ForeignKey(Curso, on_delete = models.CASCADE)
+    periodo = models.CharField(
+        blank = False,
+        null = False,
+        max_length = 1,
+        choices = PERIODO,
+        default = 'M'
+    )
